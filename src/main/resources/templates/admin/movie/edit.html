@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en" dir="ltr">
+<head th:replace="~{admin/common/head :: head}"></head>
+<body class="app aside-menu-fixed sidebar-lg-show">
+<div th:replace="~{admin/common/header :: header}"></div>
+<div class="app-body">
+    <div th:include="~{admin/common/sidebar :: sidebar}"></div>
+    <main class="main pt-3">
+        <nav aria-label="breadcrumb" class="d-none d-lg-block">
+            <ol class="breadcrumb bg-transparent p-0 justify-content-end">
+                <li class="breadcrumb-item text-capitalize"><a href="https://phimmoichilli.com/admin/dashboard">Admin</a></li>
+                <li class="breadcrumb-item text-capitalize"><a href="https://phimmoichilli.com/admin/movie">movies</a></li>
+                <li class="breadcrumb-item text-capitalize active" aria-current="page">Add</li>
+            </ol>
+        </nav>
+        <section class="container-fluid">
+            <h2>
+                <span class="text-capitalize">movies</span>
+                <small>Add movie.</small>
+                <small><a href="https://phimmoichilli.com/admin/movie" class="d-print-none font-sm"><i class="la la-angle-double-left"></i>
+                    Back to all
+                    <span>movies</span></a></small>
+            </h2>
+        </section>
+        <div class="container-fluid animated fadeIn">
+            <div class="row">
+                <div class="col-md-8 bold-labels">
+                    <form th:action="@{/admin-movie/list-movie/edit}" th:object="${movie}" method="post">
+                        <div class="tab-container  mb-2">
+                            <div class="nav-tabs-custom " id="form_tabs">
+                                <ul class="nav nav-tabs">
+                                    <li role="presentation" class="nav-item">
+                                        <a href="#tab_thong-tin-phim" aria-controls="tab_thong-tin-phim" role="tab" tab_name="thong-tin-phim" data-toggle="tab" class="nav-link active">Thông tin phim</a>
+                                    </li>
+                                </ul>
+                                <div class="tab-content p-0 ">
+                                    <div role="tabpanel" class="tab-pane  active" id="tab_thong-tin-phim">
+                                        <div class="row">
+                                            <input type="hidden" th:field="*{id}" class="form-control">
+                                            <div class="form-group col-md-6 required" >
+                                                <label>Tên phim</label>
+                                                <input type="text" th:field="*{name}" placeholder="Tên" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-6 required" >
+                                                <label>Tên gốc</label>
+                                                <input type="text" th:field="*{originName}" class="form-control">
+                                            </div>
+                                            <div class="form-group col-sm-12" >
+                                                <label>Đường dẫn tĩnh</label>
+                                                <input type="text" th:field="*{movie_slug}" class="form-control">
+                                            </div>
+                                            <!--                                            <div class="form-group col-sm-12" >-->
+                                            <!--                                                <label>Ảnh Thumb</label>-->
+                                            <!--                                                <div class="input-group">-->
+                                            <!--                                                    <input type="file" class="custom-file-input" id="customFileLang" lang="es">-->
+                                            <!--                                                    <label class="custom-file-label" for="customFileLang"></label>-->
+                                            <!--                                                </div>-->
+                                            <!--                                            </div>-->
+                                            <div class="form-group col-sm-12" >
+                                                <label>Ảnh Thumb</label>
+                                                <div class="input-group">
+                                                    <input type="text" th:field="*{thumbUrl}" class="form-control" lang="es">
+                                                    <!--                                                    <label class="custom-file-label" for="customFileLang"></label>-->
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-sm-12" >
+                                                <label>Nội dung</label>
+                                                <textarea id="summernote" name="editordata" th:field="*{content}"></textarea>
+                                            </div>
+
+                                            <div class="form-group col-sm-12">
+                                                <label>Thông báo / ghi chú</label>
+                                                <input type="text" th:field="*{notes}" placeholder="Tuần này hoãn chiếu" class="form-control">
+                                            </div>
+                                            <div class="form-group col-sm-12" >
+                                                <label>Lịch chiếu phim</label>
+                                                <input type="text" th:field="*{movieSchedule}" placeholder="21h tối hàng ngày" class="form-control">
+                                            </div>
+                                            <div class="form-group col-sm-12" >
+                                                <label>Trailer Youtube URL</label>
+                                                <input type="text" th:field="*{movieTrailer}" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4" >
+                                                <label>Thời lượng tập phim</label>
+                                                <input type="text" th:field="*{episodeDuration}" placeholder="45 phút" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4" >
+                                                <label>Tập phim hiện tại</label>
+                                                <input type="text" th:field="*{currentEpisode}" placeholder="5" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4" >
+                                                <label>Tổng số tập phim</label>
+                                                <input type="text" th:field="*{totalEpisode}" placeholder="12" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4" >
+                                                <label>Ngôn ngữ</label>
+                                                <input type="text" th:field="*{movieLang}" placeholder="Tiếng Việt" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4" >
+                                                <label>Chất lượng</label>
+                                                <input type="text" th:field="*{quality}" class="form-control">
+                                            </div>
+                                            <div class="form-group col-md-4" >
+                                                <label>Năm xuất bản</label>
+                                                <input type="text" th:field="*{publishYear}" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="_current_tab" value="thong-tin-phim">
+                        <div id="saveActions" class="form-group">
+                            <input type="hidden" name="_save_action" value="save_and_back">
+                            <div class="btn-group" role="group">
+                                <button type="submit" class="btn btn-success">
+                                    <span class="la la-save" role="presentation" aria-hidden="true"></span> &nbsp;
+                                    <span data-value="save_and_back">Save and back</span>
+                                </button>
+                            </div>
+                            <a href="https://phimmoichilli.com/admin/movie" class="btn btn-default"><span class="la la-ban"></span>Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<div th:replace="~{admin/common/footer :: footer}"></div>
+<script type="text/javascript" src="https://phimmoichilli.com/packages/backpack/base/js/bundle.js?v=1.0.0@dae217b370cabdec958dab215801096cdacf37fe"></script>
+<script type="text/javascript" src="https://phimmoichilli.com/packages/select2/dist/js/select2.full.min.js?v=1.0.0@dae217b370cabdec958dab215801096cdacf37fe"></script>
+<script>
+    $(document).ready(function() {
+        $('#summernote').summernote({
+            placeholder: 'Hello stand alone ui',
+            tabsize: 1,
+            minHeight: 100,
+            maxHeight: 200,
+            height: 150,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['insert', ['link', 'picture', 'hr']],
+                ['help', ['help']]
+            ],
+        });
+    });
+</script>
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+</body>
+</html>

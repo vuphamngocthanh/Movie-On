@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en" dir="ltr">
+<head th:replace="~{admin/common/head :: head}"></head>
+<body class="app aside-menu-fixed sidebar-lg-show">
+<div th:replace="~{admin/common/header :: header}"></div>
+<div class="app-body">
+    <div th:include="~{admin/common/sidebar :: sidebar}"></div>
+    <main class="main pt-2">
+        <nav aria-label="breadcrumb" class="d-none d-lg-block">
+            <ol class="breadcrumb bg-transparent p-0 justify-content-end">
+                <li class="breadcrumb-item text-capitalize">
+                    <a href="https://phimmoichilli.com/admin/dashboard">Admin</a>
+                </li>
+                <li class="breadcrumb-item text-capitalize">
+                    <a href="https://phimmoichilli.com/admin/category">categories</a>
+                </li>
+                <li class="breadcrumb-item text-capitalize active" aria-current="page">Add
+                </li>
+            </ol>
+        </nav>
+        <section class="container-fluid">
+            <h2>
+                <span class="text-capitalize">categories</span>
+                <small>Add category.</small>
+                <small>
+                    <a href="https://phimmoichilli.com/admin/category" class="d-print-none font-sm">
+                        <i class="la la-angle-double-left"></i> Back to all
+                        <span>categories</span>
+                    </a>
+                </small>
+            </h2>
+        </section>
+        <div class="container-fluid animated fadeIn">
+            <div class="row">
+                <div class="col-md-8 bold-labels">
+                    <form th:action="@{/admin-movie/create-category/save}" th:object="${category}" method="post">
+                        <input type="hidden"/>
+                        <input type="hidden" value="https://phimmoichilli.com/admin/category" />
+                        <div class="card">
+                            <div class="card-body row">
+                                <div class="form-group col-sm-12 required">
+                                    <label>Tên</label>
+                                    <input type="text" name="name" value="" class="form-control" />
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label>Đường dẫn tĩnh</label>
+                                    <input type="text" name="slug" value="" class="form-control" />
+                                </div>
+                                <div class="form-group col-sm-12">
+                                    <label>Category Slug</label>
+                                    <input type="text" name="seo_title" value="" class="form-control" readonly />
+                                </div>
+                                <div class="form-group col-sm-12" bp-field-name="seo_des"
+                                     bp-field-type="textarea">
+                                    <label>SEO Description</label>
+                                    <input type="text" name="seo_des" class="form-control" readonly></input>
+                                </div>
+                                <div class="form-group col-sm-12" bp-field-name="seo_key"
+                                     bp-field-type="text">
+                                    <label>SEO Keyword</label>
+                                    <input type="text" name="seo_key" value="" class="form-control" readonly/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-none" id="parentLoadedAssets">[]</div>
+                        <div id="saveActions" class="form-group">
+                            <input type="hidden" name="_save_action" value="save_and_back" />
+                            <div class="btn-group" role="group">
+                                <button type="submit" class="btn btn-success">
+                                    <span class="la la-save" role="presentation" aria-hidden="true"></span>
+                                    &nbsp;
+                                    <span data-value="save_and_back">Save and back</span>
+                                </button>
+                            </div>
+                            <a href="https://phimmoichilli.com/admin/category" class="btn btn-default"><span class="la la-ban"></span>
+                                &nbsp;Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<div th:replace="~{admin/common/footer :: footer}"></div>
+<script type="text/javascript" src="https://phimmoichilli.com/packages/backpack/base/js/bundle.js?v=1.0.0@dae217b370cabdec958dab215801096cdacf37fe"></script>
+<script type="text/javascript" src="https://phimmoichilli.com/packages/select2/dist/js/select2.full.min.js?v=1.0.0@dae217b370cabdec958dab215801096cdacf37fe"></script>
+</body>
+</html>

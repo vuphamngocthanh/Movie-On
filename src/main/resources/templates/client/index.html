@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="/client/layout :: head">
+</head>
+<body>
+<div th:replace="/client/layout :: header"></div>
+<div th:replace="/client/layout :: main"></div>
+<div th:replace="/client/layout :: headerpc"></div>
+<div th:replace="/client/layout :: mainpc"></div>
+<div id="main-content">
+  <div id="content">
+    <div class="container ">
+      <div class="block-wrapper only-pc">
+        <ul id="film-hot" class="film-hot">
+          <li class="film-item " th:each="nomi:${nominates}">
+             <span class="current-status" style="text-transform: uppercase;font-weight: 500;">
+               <i class="fa fa-play-circle" aria-hidden="true"></i> Hoàn Tất (16/16)
+             </span>
+            <a th:href="@{/phim/{name}-{id}(name=${nomi.movie_slug},id=${nomi.id})}" th:title="${nomi.name}">
+              <img th:alt="${nomi.name}"
+                   th:src="${nomi.thumbUrl}" />
+              <div class="title">
+                <div class="post-title">
+                  <span class="label-quality" th:text="${nomi.quality}"></span>
+                  <p class="name" th:text="${nomi.name}"></p>
+                  <p class="real-name" th:text="${nomi.originName}"></p>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="container " id="wrapper">
+        <div class="left-content" style="padding-left: 10px;padding-right: 10px;">
+          <div style="box-shadow: 0px 3px 20px 2px rgb(18 24 29);">
+            <ul id="top-slide" class="owl-carousel owl-theme" style="opacity: 1; display: block; margin-top: 10px;">
+              <li th:each="nomi:${nominates}">
+                <a th:title="${nomi.name}"
+                   th:href="@{/phim/{name}-{id}(name=${nomi.movie_slug},id=${nomi.id})}">
+                  <div class="title">
+                    <p class="effect-text"
+                       style="text-transform: uppercase!important;color: #fff;font-size: 11px;padding: 2px 4px 2px;color: #fff;margin-left: 3px;font-weight: 500;color: #fff;background: linear-gradient( 81.43deg , #c11e1b -26.81%, #6f0c0b 87.89%);box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 75%);border: 0px solid #febb00; border-radius: 2px;white-space: nowrap;">
+                      <i class="fa fa-play-circle" aria-hidden="true"></i> Hoàn Tất (16/16)
+                      Vietsub HD
+                    </p>
+                    <p class="name" style="text-transform: uppercase!important;" th:text="${nomi.name}"></p>
+                    <p class="real-name">Reborn Rich 2022</p>
+                  </div>
+                  <img th:src="${nomi.thumbUrl}"
+                       th:alt="${nomi.name}">
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="block-film">
+            <h2 class="caption">
+              <i class="fa fa-plus-square" aria-hidden="true"></i> <span>Phim bộ mới</span>
+              <i class="fa fa-caret-right" aria-hidden="true"></i>
+              <a class="view-all" title="Phim bộ mới" href="/danh-sach/phim-bo">Xem tất cả <i
+                      class="fa fa-angle-double-right"></i>
+              </a>
+            </h2>
+            <ul class="list-film" th:each="series:${listSeriesNew}">
+              <li class="film-item no-margin-right">
+                 <span class="current-status" style="text-transform: uppercase;font-weight: 500;">
+                   <i class="fa fa-play-circle" aria-hidden="true"></i><span th:text="${series.getCurrentEpisode()}"></span></span>
+                <a th:href="@{/phim/{name}-{id}(name=${series.movie_slug},id=${series.id})}">
+                  <img alt="Huyết Và Tâm"
+                       th:src="${series.getThumbUrl()}" />
+                  <div class="title">
+                    <div class="post-title">
+                      <span class="label-quality" th:text="${series.getQuality()}"></span>
+                      <p class="name" th:text="${series.getName()}"></p>
+                      <p class="real-name" th:text="${series.getOriginName()}"></p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="block-film">
+            <h2 class="caption">
+              <i class="fa fa-plus-square" aria-hidden="true"></i> <span>Phim lẻ mới</span>
+              <i class="fa fa-caret-right" aria-hidden="true"></i>
+              <a class="view-all" title="Phim lẻ mới" href="/danh-sach/phim-bo">Xem tất cả <i
+                      class="fa fa-angle-double-right"></i>
+              </a>
+            </h2>
+            <ul class="list-film" th:each="single:${listSingleNew}">
+              <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i
+                        class="fa fa-play-circle" aria-hidden="true"></i> Full</span>
+                <a th:href="@{/phim/{name}-{id}(name=${single.movie_slug},id=${single.id})}"
+                   th:title="${single.getName()}">
+                  <img th:alt="${single.getName()}"
+                       th:src="${single.getThumbUrl()}" />
+                  <div class="title">
+                    <div class="post-title">
+                      <span class="label-quality" th:text="${single.getQuality()}"></span>
+                      <p class="name" th:text="${single.getName()}"></p>
+                      <p class="real-name" th:text="${single.getOriginName()}"></p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="block-film">
+            <h2 class="caption">
+              <i class="fa fa-plus-square" aria-hidden="true"></i> <span>Phim chiếu rạp</span>
+              <i class="fa fa-caret-right" aria-hidden="true"></i>
+              <a class="view-all" title="Phim chiếu rạp" href="#">Xem tất cả <i
+                      class="fa fa-angle-double-right"></i>
+              </a>
+            </h2>
+            <ul class="list-film" th:each="cinema:${movieCinemaList}">
+              <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;">
+                    <i class="fa fa-play-circle" aria-hidden="true"></i> Full</span>
+                <a th:href="@{/phim/{name}-{id}(name=${cinema.movie_slug},id=${cinema.id})}"
+                   th:title="${cinema.name}">
+                  <img th:alt="${cinema.name}"
+                       th:src="${cinema.thumbUrl}" />
+                  <div class="title">
+                    <div class="post-title">
+                      <span class="label-quality" th:text="${cinema.quality}"></span>
+                      <p class="name"th:text="${cinema.name}"></p>
+                      <p class="real-name" th:text="${cinema.originName}"></p>
+                    </div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+<!--        <div th:replace="/client/layout :: sidebar-right"></div>-->
+          <div class="right-content" style="padding-left: 10px;padding-right: 10px;">
+            <div class="most-view block" style="margin-top: 10px; margin-bottom: 50px">
+              <img src="/assetClient/images/TOP_PHIM_HOT_365.png" style="width:100%">
+              <div class="tabs">
+                <div data-id="day" class="tab active">Phim sắp chiếu</div>
+              </div>
+              <div class="clear"></div>
+              <ul class="list-film">
+                <li class="film-item-ver" th:each="upcoming :${listUpComing}">
+                  <a th:href="@{/phim/{name}-{id}(name=${upcoming.movie_slug},id=${upcoming.id})}" th:title="${upcoming.name}">
+                    <img class="avatar" th:alt="${upcoming.name}"
+                         th:src="${upcoming.thumbUrl}" />
+                    <div class="title">
+                      <p class="name"
+                         style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"
+                         th:text="${upcoming.name}"></p>
+                      <p class="real-name"
+                         style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;"
+                         th:text="${upcoming.originName}"></p>
+                    </div>
+                  </a>
+                  <p class="view" style="color:#aaa;"><i class="fa fa-eye" aria-hidden="true"></i>
+                    21 lượt xem</p>
+                  <p class="aside_star" data-rating="0.0" style="margin-bottom: 10px;"></p>
+                  <span style="font-size: 11px;right: 2px; bottom: 52px;color: #fff;font-size: 11px; padding: 2px 4px 2px;color: #fff;margin-left: 3px;font-weight: 500;color: #fff;
+                          background: linear-gradient( 81.43deg , #c11e1b -26.81%, #6f0c0b 87.89%); box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 75%);border: 0px solid #febb00;
+                          border-radius: 2px;white-space: nowrap;transition: .7s;text-transform: capitalize;">
+                    <i class="fa fa-play-circle" aria-hidden="true"></i><span th:text="${upcoming.movieTrailer + upcoming.movieLang}"></span>
+                </span>
+                </li>
+              </ul>
+            </div>
+            <div class="most-view block" style="margin-top: 10px; margin-bottom: 50px">
+              <img src="/assetClient/images/TOP_PHIM_HOT_365.png" style="width:100%">
+              <div class="tabs">
+                <div data-id="day" class="tab active">Top phim lẻ</div>
+              </div>
+              <div class="clear"></div>
+              <ul class="list-film">
+                <li class="film-item-ver">
+                  <a href="https://phimmoichilli.com/phim/avatar-2-dong-chay-cua-nuoc"
+                     title="Avatar 2: Dòng Chảy Của Nước">
+                    <img class="avatar" alt="Avatar 2: Dòng Chảy Của Nước"
+                         src="/storage/images/avatar-2-dong-chay-cua-nuoc/avatar-2-dong-chay-cua-nuoc-thumb.jpg" />
+                    <div class="title">
+                      <p class="name"
+                         style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                        Avatar 2: Dòng Chảy Của Nước</p>
+                      <p class="real-name"
+                         style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                        Avatar 2 (2022)</p>
+                    </div>
+                  </a>
+                  <p class="view" style="color:#aaa;"><i class="fa fa-eye" aria-hidden="true"></i>
+                    785 lượt xem</p>
+                  <p class="aside_star" data-rating="10.0" style="margin-bottom: 10px;"></p>
+                  <span
+                          style="font-size: 11px;right: 2px; bottom: 52px;color: #fff;font-size: 11px;padding: 2px 4px 2px;color: #fff;margin-left: 3px;font-weight: 500;color: #fff;background: linear-gradient( 81.43deg , #c11e1b -26.81%, #6f0c0b 87.89%);box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 75%);border: 0px solid #febb00; border-radius: 2px;white-space: nowrap;transition: .7s;text-transform: capitalize;"><i
+                          class="fa fa-play-circle" aria-hidden="true"></i> Full
+                                        Vietsub</span>
+                </li>
+              </ul>
+            </div>
+            <div class="most-view block" style="margin-top: 10px; margin-bottom: 50px">
+              <img src="/assetClient/images/TOP_PHIM_HOT_365.png" style="width:100%">
+              <div class="tabs">
+                <div data-id="day" class="tab active">Top phim bộ</div>
+              </div>
+              <div class="clear"></div>
+              <ul class="list-film">
+                <li class="film-item-ver">
+                  <a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet"
+                     title="Cậu Út Nhà Tài Phiệt">
+                    <img class="avatar" alt="Cậu Út Nhà Tài Phiệt"
+                         src="/storage/images/cau-ut-nha-tai-phiet/cau-ut-nha-tai-phiet-thumb.jpg" />
+                    <div class="title">
+                      <p class="name"
+                         style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                        Cậu Út Nhà Tài Phiệt</p>
+                      <p class="real-name"
+                         style="white-space: nowrap;text-overflow: ellipsis;overflow: hidden;">
+                        Reborn Rich (2022)</p>
+                    </div>
+                  </a>
+                  <p class="view" style="color:#aaa;"><i class="fa fa-eye" aria-hidden="true"></i>
+                    510 lượt xem</p>
+                  <p class="aside_star" data-rating="10.0" style="margin-bottom: 10px;"></p>
+                  <span
+                          style="font-size: 11px;right: 2px; bottom: 52px;color: #fff;font-size: 11px;padding: 2px 4px 2px;color: #fff;margin-left: 3px;font-weight: 500;color: #fff;background: linear-gradient( 81.43deg , #c11e1b -26.81%, #6f0c0b 87.89%);box-shadow: 2px 2px 3px 0px rgb(0 0 0 / 75%);border: 0px solid #febb00; border-radius: 2px;white-space: nowrap;transition: .7s;text-transform: capitalize;"><i
+                          class="fa fa-play-circle" aria-hidden="true"></i> Hoàn Tất (16/16)
+                                        Vietsub</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer" style="margin-top: 25px;">
+  <div class="container">
+    <div class="content">
+      <div class="views-row views-row-1" style="width: 100%;text-align: center;">
+        <div class="logo-footer">
+          <a href=""><img alt="phimmoi" style="width: 146px;" src="/storage/files/icon/logo.png" /></a>
+        </div>
+        <div class="copy-right">
+          <p>Copyright ® 2021 OPHIMCMS All Rights Reserved.</p>
+          <p><a href="/sitemap.xml">Sitemap</a> | <a href="">Liên hệ</a> | <a
+                  href="/danh-sach/phim-moi.html">Phim Mới </a> | <a href="" target="_blank" title="">Phim
+            Hay </a></p><br>
+        </div>
+        <div class="hidden-sm hidden-xs">
+          <ul class="tags" style="list-style: none;">
+            <li class="tag-item"><a href="/tu-khoa/phim-moi" rel="nofollow" title="phimmoi">phimmoi</a>
+            </li>
+            <li class="tag-item"><a href="/tag/spider-man.html" rel="nofollow"
+                                    title="/tu-khoa/phimmoichill">phimmoichill</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phimchill" rel="nofollow"
+                                    title="phimchill">phimchill</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phim-moi-167120280796461" rel="nofollow"
+                                    title="phim mới">phim mới</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phim-hay" rel="nofollow" title="phim hay">phim
+              hay</a></li>
+            <li class="tag-item"><a href="/tu-khoa/top-phim" rel="nofollow" title="Top phim">Top
+              phim</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phim-hay-nhat-2023" rel="nofollow"
+                                    title="phim hay nhất 2023">phim hay nhất 2023</a></li>
+            <li class="tag-item"><a href="/tag/friday-the-13th.html" rel="nofollow"
+                                    title="Friday The 13th">Friday The 13th</a></li>
+            <li class="tag-item"><a href="/tag/paranormal-activity.html" rel="nofollow"
+                                    title="Paranormal Activity">Paranormal Activity</a></li>
+            <li class="tag-item"><a href="/tag/luoi-cua.html" rel="nofollow" title="Lưỡi Cưa">Lưỡi
+              Cưa</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="/assetClient/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assetClient/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/assetClient/js/functions.js"></script>
+<script type="text/javascript" src="/assetClient/js/actions.js"></script>
+<script type="text/javascript" src="/assetClient/plugins/jquery-raty/jquery.raty.js"></script>
+<script src="/assetClient/js/owl.carousel.js" type="text/javascript"></script>
+<script src="/assetClient/js/customize.js" type="text/javascript"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.aside_star').raty({
+      readOnly: true,
+      numberMax: 5,
+      half: true,
+      starOff: '/assetClient/images/star-off-20.png',
+      starOn: '/assetClient/images/star-on-20.png',
+      starHalf: '/assetClient/images/star-half-20.png',
+      score: function () {
+        return $(this).attr('data-rating');
+      },
+      space: false
+    });
+  });
+
+  var $menu = $("#main-menu");
+  var $over_lay = $('#overlay_menu');
+  var hw = $(window).height();
+
+  function set_height_menu() {
+    var w_scroll_top = $(window).scrollTop();
+    if (w_scroll_top >= 50) {
+      pos_top_menu = 0;
+    } else {
+      pos_top_menu = 50 - w_scroll_top;
+    }
+    $menu.css('top', pos_top_menu + 'px');
+    $("#overlay_menu").css('top', pos_top_menu + 'px');
+  }
+
+  function open_menu() {
+    $menu.height(hw);
+    $menu.addClass('expanded');
+    set_height_menu();
+    $("#overlay_menu").removeClass('hide');
+    $('body,html').addClass('overlow-hidden');
+    $(".btn-humber").addClass('active');
+
+  }
+
+  function close_menu() {
+    $menu.removeClass('expanded');
+    var w_scroll_top = $(window).scrollTop();
+    if (w_scroll_top >= 50) {
+      pos_top_menu = 0;
+    } else {
+      pos_top_menu = w_scroll_top;
+    }
+    set_height_menu();
+    $("#overlay_menu").addClass('hide');
+    $('body,html').removeClass('overlow-hidden');
+    $(".btn-humber").removeClass('active');
+  }
+
+  $(document).ready(function () {
+    //Xử lý khi ấn vào nút menu
+    $(".btn-humber").click(function () {
+      if ($menu.hasClass('expanded')) {
+        close_menu();
+      } else {
+        open_menu();
+      }
+    });
+
+
+    //Xu ly khi vuot tren man hinh
+    /*
+    $("#content").swipe({
+        swipeRight:function(event, direction, distance, duration, fingerCount){
+            open_menu();
+        },
+        threshold:20,
+        fingers:'all',
+    });
+    $("#overlay_menu").swipe({
+        swipeLeft:function(event, direction, distance, duration, fingerCount){
+            close_menu();
+        },
+        threshold:10,
+        fingers:'all',
+    });
+    */
+
+    $(window).scroll(function () {
+      set_height_menu();
+    });
+
+    $(".parent-menu").click(function () {
+      $this = $(this);
+      $arrow = $this.find('.fa-expand');
+      if ($arrow.hasClass('fa-angle-down')) {
+        $arrow.removeClass('fa-angle-down').addClass('fa-angle-up');
+      } else {
+        $arrow.addClass('fa-angle-down').removeClass('fa-angle-up');
+      }
+      $this.find('.sub-menu').toggle();
+    });
+
+  });
+</script>
+<script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="|49"
+        defer=""></script>
+</body>
+
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:fragment="head" th:object="${episode}">
+  <meta charSet="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <meta http-equiv="content-language" content="en" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revisit-after" content="1 days" />
+  <meta name="ROBOTS" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+  <meta name="BingBOT" content="index,follow" />
+  <meta name="yahooBOT" content="index,follow" />
+  <meta name="slurp" content="index,follow" />
+  <meta name="msnbot" content="index,follow" />
+  <meta name="csrf-token" content="evbDzMDb0bZJeIlV3nN9ofkXLTkKkw8dzMzGcdaI">
+  <meta property="fb:app_id" content="" />
+  <link rel="shortcut icon" href="/storage/files/icon/favicon.png" type="image/png" />
+  <title>phimmoi|phimmoichilli|Phim mới của phimmoichill|motphim|tvhayvn</title>
+  <meta name="description"
+        content="phimmoi là web cập nhật phim mới  . Với tiêu chí của phimmoichill, motphim,motchill và tvhayvn 2023.Phimmoichilli là trang phim tổng hợp top các bộ phim mới hấp dẫn nhất 2023, đủ các thể loại phim mới nhất hay nhất">
+  <meta name="keywords"
+        content="phim moi nét, phimmoi trọn bộ ,phim motchill, motchill phim mới , phim mới , phim moi net,phim mới chill, phimmoichill, Top phim">
+  <link rel="canonical" href="https://phimmoichilli.com" />
+  <meta property="og:title" content="phimmoi|phimmoichilli|Phim mới của phimmoichill|motphim|tvhayvn" />
+  <meta property="og:description"
+        content="phimmoi là web cập nhật phim mới  . Với tiêu chí của phimmoichill, motphim,motchill và tvhayvn 2023.Phimmoichilli là trang phim tổng hợp top các bộ phim mới hấp dẫn nhất 2023, đủ các thể loại phim mới nhất hay nhất" />
+  <meta property="og:url" content="current" />
+  <meta property="og:site_name" content="Phimmoichilli.com" />
+  <meta property="og:image" content="/storage/files/icon/motchilly.png" />
+  <meta name="twitter:site" content="Phimmoichilli.com" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/bootstrap.minmod.css" />
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css?v=16661691001.1" />
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/updet.css" />
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/responsivemod.css" />
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/owl.carouselmod.css" />
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/magnific-popup.css">
+</head>
+<body>
+<div th:replace="/client/layout :: header"></div>
+<div th:replace="/client/layout :: main"></div>
+<div th:replace="/client/layout :: headerpc"></div>
+<div th:replace="/client/layout :: mainpc"></div>
+<div id="main-content">
+  <div id="content">
+    <div class="container ">
+      <div class="container " id="wrapper">
+        <div class="left-content" style="padding-left: 10px;padding-right: 10px;">
+          <div class="">
+            <div class="box-player" id="box-player" style="margin-top: 10px;">
+              <div id="player_message" style="display:none;"></div>
+              <div id="media-player">
+              </div>
+            </div>
+            <span class="button-watch" id="btn_report" title="Báo lỗi phim" style="float: left;"> <i class="fa fa-bug"></i> Báo lỗi phim</span>
+            <span class="button-watch" id="btn_lightbulb" title="Chế Độ Rạp Phim"> <i class="fa fa-lightbulb-o" style="margin-right: 5px;"></i></span>
+            <div class="button-watch  btn-report">
+              <span><i class="fa fa-eye" aria-hidden="true"></i><span th:text="${' ' + episode.getMovies().getView() +' Lượt'}"></span></span>
+            </div>
+            <div class="clear"></div>
+            <div class="list-server" id="list-server">
+              <div class="server-item" th:object="${episode}">
+                <div class="name col-lg-2 col-md-2 col-sm-4 col-xs-4 " style="max-width: 60px;">
+                  <span class="tags-item-info"><i class="fa fa-database"></i> Server</span>
+                </div>
+                <span style="padding:0px;">
+                <span onclick="chooseStreamingServer(this)" data-type="m3u8" data-id="294071" th:attr="data-link=${episode.link}"   class="streaming-server btn btn-sm btn-success" data-index="0" data-cf-modified-="">
+                <span class="link_playing" style="display: none;">
+                  <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom" style="font-size: 13px;margin-left: -3px;"></i>
+                </span>
+                    VIP #1
+                </span>
+                  <span onclick="chooseStreamingServer(this)" data-type="embed" data-id="294072" th:attr="data-link=${episode.link}" class="streaming-server btn btn-sm btn-success" data-index="0" data-cf-modified-="">
+                    <span class="link_playing" style="display: none;">
+                    <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom" style="font-size: 13px;margin-left: -3px;"></i>
+                  </span>VIP #2
+            </span>
+          </span>
+              </div>
+            </div>
+            <div class="clear"></div>
+            <div class="details">
+              <div class="control-box">
+                <div class="box">
+                  <div class="box-body">
+                    <li class="list-item" style="padding: 0;">
+                      <div class="col-xs-12 col-sm-10 p-a-0 ">
+                        <a th:href="@{phim}" class="text-primary">
+                          <h1 class="film-title text-uppercase" style="margin-bottom: 0" th:text="${episode.getMovies().name}"></h1>
+                        </a>
+                        <h2 class="text-muted film-title" style="color: #B3B3B3;">Reborn Rich
+                          (2022)</h2>
+                        <div class="p-2">
+                          <div class="tags-info" style="margin-top: 10px;border-bottom: 1px solid rgba(255,255,255,.1);border-top: 1px solid rgba(255,255,255,.1);">
+                            <span class="dd1"><i class="imdb-icon"></i> N/A</span>
+                            <span class="tags-item-info" style="color: #fff;">
+                              <a href="https://phimmoichilli.com/quoc-gia/han-quoc" title="Hàn Quốc">Hàn Quốc</a>
+                            </span>
+                            <span class="tags-item-info" style="color: #fff;">2022</span>
+                            <span class="tags-item-info">Tập 1</span>
+                          </div>
+                        </div>
+                        <div class="review-body limit" style="box-shadow: 0px 3px 20px 2px rgb(14 51 82);padding: 5px 8px;/* margin: 5px 0 20px 0; */line-height: 24px;font-size: 14px;color: #BBB;">
+                          <p>
+                          <p>
+                          <p>Được chuyển thể từ tiểu thuyết The Youngest Son of a Conglomerate, xoay quanh nhân vật Yoon Hyun Woo (Song Joong Ki), một thư ký của Tập đoàn Sunyang. Hyun Woo là một nhân viên trung thành, nhưng lại nhận kết cục thảm khốc bởi chính gia đình mà anh "cúc cung tận tuỵ". Sau khi chết thảm, Yoon Hyun Woo sống lại một lần nữa dưới thân xác Jin Do Joon, con trai út của gia đình Sunyang Group. Mang hình hài của Jin Do Joon, Yoon Hyun Woo làm việc tiếp quản công ty cũng như bắt đầu màn trả thù của mình.</p>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  </div>
+                </div>
+                <div class="box-rating">
+                  <div class="rate-title">
+                    <span class="rate-lable"></span>
+                  </div>
+                  <div id="star" data-score="10.0" style="cursor: pointer;">
+                  </div><br />
+                  <div>
+                    <div id="div_average" style="float: left; line-height: 16px; margin: 0 5px;margin-top: 5px; ">
+<span class="average" id="average" itemprop="ratingValue">
+10.0
+</span>
+                      <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                      <span id="rate_count" itemprop="reviewCount">1</span> lượt
+                      đánh giá
+                    </div>
+                    <span id="hint"></span>
+                    <meta itemprop="bestRating" content="10" />
+                    <meta itemprop="worstRating" content="1" />
+                    <meta itemprop="ratingValue" content="10.0" />
+                    <meta itemprop="ratingCount" content="1" />
+                  </div>
+                </div>
+              </div>
+              <div class="control-box clear">
+                <div class="clear"></div>
+                <div class="episodes" style="padding: 5px 2px;margin: 5px 0 10px 0;">
+                  <div class="caption">
+<span style="margin-top: 20px;border-bottom: 1px solid rgba(255,255,255,.1);line-height: 25px;padding: 10px 0;text-transform: uppercase;background: rgba(54, 71, 86, 0.13);">
+<i class="fa fa-youtube-play"></i> DANH SÁCH TẬP: Vietsub #1 <i class="fa fa-angle-down"></i> </span>
+                  </div>
+                  <ul class="list-episode" id="list_episodes">
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-16-325176" title="16" class="">16</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-15-325110" title="15" class="">15</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-14-324097" title="14" class="">14</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-13-324020" title="13" class="">13</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-12-323908" title="12" class="">12</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-11-323104" title="11" class="">11</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-10-303346" title="10" class="">10</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-9-294087" title="9" class="">9</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-8-294085" title="8" class="">8</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-7-294083" title="7" class="">7</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-6-294081" title="6" class="">6</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-5-294079" title="5" class="">5</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-4-294077" title="4" class="">4</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-3-294075" title="3" class="">3</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-2-294073" title="2" class="">2</a></li>
+                    <li><a href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-1-294071" title="1" class=" current ">1</a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="clear"></div>
+            </div>
+
+            <div class="bottom-content" style="margin-top: 5px;">
+              <div class="block-film" id="film-trailer">
+                <p class="caption"><i class="fa fa-facebook-square" aria-hidden="true"></i>Bình
+                  Luận Facebook</p>
+                <div class="box-comment" id="tabs-facebook" style="background: linear-gradient(to right, #ffff, #ffff);">
+                  <div class="fb-comments" data-href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet" data-width="670" data-numposts="10" data-order-by="reverse_time" data-colorscheme="light">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-film " style="margin-top: 10px;">
+              <h2 class="caption"><span>Có Thể Bạn Thích</span> </h2>
+              <ul id="film_related" class="list-film block_slider">
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Full</span>
+                  <a href="https://phimmoichilli.com/phim/do-vo-167048567429786" title="Đổ Vỡ">
+                    <img alt="Đổ Vỡ" src="/storage/images/do-vo/do-vo-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Vietsub</span>
+                        <p class="name">Đổ Vỡ</p>
+                        <p class="real-name">Crash (2005)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Hoàn Tất (20/20)</span>
+                  <a href="https://phimmoichilli.com/phim/quy-co-uu-tu" title="Quý Cô Ưu Tú">
+                    <img alt="Quý Cô Ưu Tú" src="/storage/images/quy-co-uu-tu/quy-co-uu-tu-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Thuyết Minh</span>
+                        <p class="name">Quý Cô Ưu Tú</p>
+                        <p class="real-name">Woman Of Dignity (2017)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Full</span>
+                  <a href="https://phimmoichilli.com/phim/ke-xau-bao-hy" title="Kẻ Xấu Báo Hỷ">
+                    <img alt="Kẻ Xấu Báo Hỷ" src="/storage/images/ke-xau-bao-hy/ke-xau-bao-hy-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Thuyết Minh </span>
+                        <p class="name">Kẻ Xấu Báo Hỷ</p>
+                        <p class="real-name">House of Wolves (2016)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Hoàn Tất (10/10)</span>
+                  <a href="https://phimmoichilli.com/phim/suptar-2550" title="Suptar 2550">
+                    <img alt="Suptar 2550" src="/storage/images/suptar-2550/suptar-2550-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Vietsub</span>
+                        <p class="name">Suptar 2550</p>
+                        <p class="real-name">Superstar 2007 (2022)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Full</span>
+                  <a href="https://phimmoichilli.com/phim/ke-thuong-thuyet" title="Kẻ Thương Thuyết">
+                    <img alt="Kẻ Thương Thuyết" src="/storage/images/ke-thuong-thuyet/ke-thuong-thuyet-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Vietsub</span>
+                        <p class="name">Kẻ Thương Thuyết</p>
+                        <p class="real-name">The Negotiator (1998)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Full</span>
+                  <a href="https://phimmoichilli.com/phim/bang-chung-vo-toi-la-thu-cua-mot-tu-tu" title="Bằng Chứng Vô Tội: Lá Thư Của Một Tử Tù">
+                    <img alt="Bằng Chứng Vô Tội: Lá Thư Của Một Tử Tù" src="/storage/images/bang-chung-vo-toi-la-thu-cua-mot-tu-tu/bang-chung-vo-toi-la-thu-cua-mot-tu-tu-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Vietsub</span>
+                        <p class="name">Bằng Chứng Vô Tội: Lá Thư Của Một Tử Tù</p>
+                        <p class="real-name">Proof Of Innocence (2016)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Full</span>
+                  <a href="https://phimmoichilli.com/phim/giua-nhung-dai-duong" title="Giữa Những Đại Dương">
+                    <img alt="Giữa Những Đại Dương" src="/storage/images/giua-nhung-dai-duong/giua-nhung-dai-duong-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Vietsub</span>
+                        <p class="name">Giữa Những Đại Dương</p>
+                        <p class="real-name">Submergence (2018)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Hoàn Tất (22/22)</span>
+                  <a href="https://phimmoichilli.com/phim/nhat-ky-ma-ca-rong-phan-3" title="Nhật Ký Ma Cà Rồng (Phần 3)">
+                    <img alt="Nhật Ký Ma Cà Rồng (Phần 3)" src="/storage/images/nhat-ky-ma-ca-rong-phan-3/nhat-ky-ma-ca-rong-phan-3-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Vietsub</span>
+                        <p class="name">Nhật Ký Ma Cà Rồng (Phần 3)</p>
+                        <p class="real-name">The Vampire Diaries (Season 3) (2011)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Full</span>
+                  <a href="https://phimmoichilli.com/phim/sat-thu-pho-wall" title="Sát thủ Phố Wall">
+                    <img alt="Sát thủ Phố Wall" src="/storage/images/sat-thu-pho-wall/sat-thu-pho-wall-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Vietsub</span>
+                        <p class="name">Sát thủ Phố Wall</p>
+                        <p class="real-name">Assault on Wall Street (2013)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Hoàn Tất (10/10)</span>
+                  <a href="https://phimmoichilli.com/phim/hen-uoc-tinh-yeu" title="Hẹn Ước Tình Yêu">
+                    <img alt="Hẹn Ước Tình Yêu" src="/storage/images/hen-uoc-tinh-yeu/hen-uoc-tinh-yeu-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Vietsub</span>
+                        <p class="name">Hẹn Ước Tình Yêu</p>
+                        <p class="real-name">Love Beyond Time (2017)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Hoàn Tất (24/24)</span>
+                  <a href="https://phimmoichilli.com/phim/su-menh-quan-nhan" title="Sứ mệnh quân nhân">
+                    <img alt="Sứ mệnh quân nhân" src="/storage/images/su-menh-quan-nhan/su-menh-quan-nhan-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Vietsub</span>
+                        <p class="name">Sứ mệnh quân nhân</p>
+                        <p class="real-name">Sứ mệnh quân nhân (2018)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+                <li class="film-item no-margin-right">
+                  <span class="current-status" style="text-transform: uppercase;font-weight: 500;"><i class="fa fa-play-circle" aria-hidden="true"></i> Hoàn Tất (30/30)</span>
+                  <a href="https://phimmoichilli.com/phim/chinh-phuc-thanh-xuan" title="Chinh Phục Thanh Xuân">
+                    <img alt="Chinh Phục Thanh Xuân" src="/storage/images/chinh-phuc-thanh-xuan/chinh-phuc-thanh-xuan-thumb.jpg" />
+                    <div class="title">
+                      <div class="post-title">
+                        <span class="label-quality">Thuyết Minh</span>
+                        <p class="name">Chinh Phục Thanh Xuân</p>
+                        <p class="real-name">Dive (2019)</p>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <style>
+              .tags1,
+              .keywords1 {
+                display: none;
+              }
+            </style>
+            <div class="clear"></div>
+            <div class="tags" style="margin-top: 10px;}">
+              <label>
+                <i class="fa fa-tags"></i> Từ khóa <i class="fa fa-caret-right"></i>
+              </label>
+              <li class="tag-item">
+                <h2>
+                  <a href="https://phimmoichilli.com/tu-khoa/cau-ut-nha-tai-phiet" rel="follow, index" title="Cậu Út Nhà Tài Phiệt">Cậu Út Nhà Tài Phiệt
+                  </a>
+                </h2>
+              </li>
+              <li class="tag-item">
+                <h2>
+                  <a href="https://phimmoichilli.com/tu-khoa/reborn-rich" rel="follow, index" title="Reborn Rich">Reborn Rich
+                  </a>
+                </h2>
+              </li>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div th:replace="/client/layout :: sidebar-right"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer" style="margin-top: 25px;">
+  <div class="container">
+    <div class="content">
+      <div class="views-row views-row-1" style="width: 100%;text-align: center;">
+        <div class="logo-footer">
+          <a href=""><img alt="phimmoi" style="width: 146px;" src="/storage/files/icon/logo.png" /></a>
+        </div>
+        <div class="copy-right">
+          <p>Copyright ® 2021 OPHIMCMS All Rights Reserved.</p>
+          <p><a href="/sitemap.xml">Sitemap</a> | <a href="">Liên hệ</a> | <a href="/danh-sach/phim-moi.html">Phim Mới </a> | <a href="" target="_blank" title="">Phim Hay </a></p><br>
+        </div>
+        <div class="hidden-sm hidden-xs">
+          <ul class="tags" style="list-style: none;">
+            <li class="tag-item"><a href="/tu-khoa/phim-moi" rel="nofollow" title="phimmoi">phimmoi</a></li>
+            <li class="tag-item"><a href="/tag/spider-man.html" rel="nofollow" title="/tu-khoa/phimmoichill">phimmoichill</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phimchill" rel="nofollow" title="phimchill">phimchill</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phim-moi-167120280796461" rel="nofollow" title="phim mới">phim mới</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phim-hay" rel="nofollow" title="phim hay">phim hay</a></li>
+            <li class="tag-item"><a href="/tu-khoa/top-phim" rel="nofollow" title="Top phim">Top phim</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phim-hay-nhat-2023" rel="nofollow" title="phim hay nhất 2023">phim hay nhất 2023</a></li>
+            <li class="tag-item"><a href="/tag/friday-the-13th.html" rel="nofollow" title="Friday The 13th">Friday The 13th</a></li>
+            <li class="tag-item"><a href="/tag/paranormal-activity.html" rel="nofollow" title="Paranormal Activity">Paranormal Activity</a></li>
+            <li class="tag-item"><a href="/tag/luoi-cua.html" rel="nofollow" title="Lưỡi Cưa">Lưỡi Cưa</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="/assetClient/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assetClient/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/assetClient/js/functions.js"></script>
+<script type="text/javascript" src="/assetClient/js/actions.js"></script>
+<script type="text/javascript" src="/assetClient/plugins/jquery-raty/jquery.raty.js"></script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-251264144-1" type="text/javascript"></script>
+<script src="/assetClient/js/owl.carousel.js" type="text/javascript"></script>
+<script src="/assetClient/js/customize.js" type="text/javascript"></script>
+<script src="/assetClient/player/js/p2p-media-loader-core.min.js" type="text/javascript"></script>
+<script src="/assetClient/player/js/p2p-media-loader-hlsjs.min.js" type="text/javascript"></script>
+<script src="/assetClient/js/jwplayer-8.9.3.js" type="text/javascript"></script>
+<script src="/assetClient/js/hls.min.js" type="text/javascript"></script>
+<script src="/assetClient/js/jwplayer.hlsjs.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('html, body').animate({
+                scrollTop: $('#box-player').offset().top
+            }, 'slow');
+        });
+    </script>
+<script type="text/javascript">
+        var episode_id = 294071;
+        const wrapper = document.getElementById('media-player');
+        const vastAds = "https://phimmoichilli.com/a/tvc.xml";
+
+        function chooseStreamingServer(el) {
+            const type = el.dataset.type;
+            const link = el.dataset.link.replace(/^http:\/\//i, 'https://');
+            const id = el.dataset.id;
+
+            const newUrl =
+                location.protocol +
+                "//" +
+                location.host +
+                location.pathname.replace(`-${episode_id}`, `-${id}`);
+
+            history.pushState({
+                path: newUrl
+            }, "", newUrl);
+            episode_id = id;
+
+
+            Array.from(document.getElementsByClassName('streaming-server')).forEach(server => {
+                server.classList.remove('disabled');
+                server.classList.remove('btn-danger');
+                server.getElementsByClassName('link_playing')[0].style.display = "none";
+            })
+            el.classList.add('disabled');
+            el.classList.add('btn-danger');
+            el.getElementsByClassName('link_playing')[0].style.display = "inline-block";
+
+            renderPlayer(type, link, id);
+        }
+
+        function renderPlayer(type, link, id) {
+            if (type == 'embed') {
+                if (vastAds) {
+                    wrapper.innerHTML = `<div id="fake_jwplayer"></div>`;
+                    const fake_player = jwplayer("fake_jwplayer");
+                    const objSetupFake = {
+                        key: "ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=",
+                        aspectratio: "16:9",
+                        width: "100%",
+                        height: "100%",
+                        file: "/themes/bptv/player/1s_blank.mp4",
+                        volume: 100,
+                        mute: false,
+                        autostart: true,
+                        advertising: {
+                            tag: "https://phimmoichilli.com/a/tvc.xml",
+                            client: "vast",
+                            vpaidmode: "insecure",
+                            skipoffset: 5, // Bỏ qua quảng cáo trong vòng 5 giây
+                            skipmessage: "Bỏ qua sau xx giây",
+                            skiptext: "Bỏ qua"
+                        }
+                    };
+                    fake_player.setup(objSetupFake);
+                    fake_player.on('complete', function(event) {
+                        $("#fake_jwplayer").remove();
+                        wrapper.innerHTML = `<iframe width="100%" height="100%" src="${link}" frameborder="0" scrolling="no"
+                allowfullscreen="" allow='autoplay'></iframe>`
+                        fake_player.remove();
+                    });
+
+                    fake_player.on('adSkipped', function(event) {
+                        $("#fake_jwplayer").remove();
+                        wrapper.innerHTML = `<iframe width="100%" height="100%" src="${link}" frameborder="0" scrolling="no"
+                allowfullscreen="" allow='autoplay'></iframe>`
+                        fake_player.remove();
+                    });
+
+                    fake_player.on('adComplete', function(event) {
+                        $("#fake_jwplayer").remove();
+                        wrapper.innerHTML = `<iframe width="100%" height="100%" src="${link}" frameborder="0" scrolling="no"
+                allowfullscreen="" allow='autoplay'></iframe>`
+                        fake_player.remove();
+                    });
+                } else {
+                    if (wrapper) {
+                        wrapper.innerHTML = `<iframe width="100%" height="100%" src="${link}" frameborder="0" scrolling="no"
+                allowfullscreen="" allow='autoplay'></iframe>`
+                    }
+                }
+                return;
+            }
+
+            if (type == 'm3u8' || type == 'mp4') {
+                wrapper.innerHTML = `<div id="jwplayer"></div>`;
+                const player = jwplayer("jwplayer");
+                const objSetup = {
+                    key: "ITWMv7t88JGzI0xPwW8I0+LveiXX9SWbfdmt0ArUSyc=",
+                    aspectratio: "16:9",
+                    width: "100%",
+                    height: "100%",
+                    image: "/storage/images/cau-ut-nha-tai-phiet/cau-ut-nha-tai-phiet-poster.jpg",
+                    file: link,
+                    playbackRateControls: true,
+                    playbackRates: [0.25, 0.75, 1, 1.25],
+                    sharing: {
+                        sites: [
+                            "reddit",
+                            "facebook",
+                            "twitter",
+                            "googleplus",
+                            "email",
+                            "linkedin",
+                        ],
+                    },
+                    volume: 100,
+                    mute: false,
+                    autostart: true,
+                    logo: {
+                        file: "/storage/files/icon/poster/logo.jpg",
+                        link: "https://www.i9bet26.com/?uagt=vip815&amp;path=signup",
+                        position: "top-left",
+                    },
+                    advertising: {
+                        tag: "https://phimmoichilli.com/a/tvc.xml",
+                        client: "vast",
+                        vpaidmode: "insecure",
+                        skipoffset: 5, // Bỏ qua quảng cáo trong vòng 5 giây
+                        skipmessage: "Bỏ qua sau xx giây",
+                        skiptext: "Bỏ qua"
+                    }
+                };
+
+                if (type == 'm3u8') {
+                    const segments_in_queue = 50;
+
+                    var engine_config = {
+                        debug: !1,
+                        segments: {
+                            forwardSegmentCount: 50,
+                        },
+                        loader: {
+                            cachedSegmentExpiration: 864e5,
+                            cachedSegmentsCount: 1e3,
+                            requiredSegmentsPriority: segments_in_queue,
+                            httpDownloadMaxPriority: 9,
+                            httpDownloadProbability: 0.06,
+                            httpDownloadProbabilityInterval: 1e3,
+                            httpDownloadProbabilitySkipIfNoPeers: !0,
+                            p2pDownloadMaxPriority: 50,
+                            httpFailedSegmentTimeout: 500,
+                            simultaneousP2PDownloads: 20,
+                            simultaneousHttpDownloads: 2,
+                            // httpDownloadInitialTimeout: 12e4,
+                            // httpDownloadInitialTimeoutPerSegment: 17e3,
+                            httpDownloadInitialTimeout: 0,
+                            httpDownloadInitialTimeoutPerSegment: 17e3,
+                            httpUseRanges: !0,
+                            maxBufferLength: 300,
+                            // useP2P: false,
+                        },
+                    };
+                    if (Hls.isSupported() && p2pml.hlsjs.Engine.isSupported()) {
+                        var engine = new p2pml.hlsjs.Engine(engine_config);
+                        player.setup(objSetup);
+                        jwplayer_hls_provider.attach();
+                        p2pml.hlsjs.initJwPlayer(player, {
+                            liveSyncDurationCount: segments_in_queue, // To have at least 7 segments in queue
+                            maxBufferLength: 300,
+                            loader: engine.createLoaderClass(),
+                        });
+                    } else {
+                        player.setup(objSetup);
+                    }
+                } else {
+                    player.setup(objSetup);
+                }
+
+
+                const resumeData = 'OPCMS-PlayerPosition-' + id;
+                player.on('ready', function() {
+                    if (typeof(Storage) !== 'undefined') {
+                        if (localStorage[resumeData] == '' || localStorage[resumeData] == 'undefined') {
+                            console.log("No cookie for position found");
+                            var currentPosition = 0;
+                        } else {
+                            if (localStorage[resumeData] == "null") {
+                                localStorage[resumeData] = 0;
+                            } else {
+                                var currentPosition = localStorage[resumeData];
+                            }
+                            console.log("Position cookie found: " + localStorage[resumeData]);
+                        }
+                        player.once('play', function() {
+                            console.log('Checking position cookie!');
+                            console.log(Math.abs(player.getDuration() - currentPosition));
+                            if (currentPosition > 180 && Math.abs(player.getDuration() - currentPosition) >
+                                5) {
+                                player.seek(currentPosition);
+                            }
+                        });
+                        window.onunload = function() {
+                            localStorage[resumeData] = player.getPosition();
+                        }
+                    } else {
+                        console.log('Your browser is too old!');
+                    }
+                });
+
+                player.on('complete', function() {
+                    if (typeof(Storage) !== 'undefined') {
+                        localStorage.removeItem(resumeData);
+                    } else {
+                        console.log('Your browser is too old!');
+                    }
+                })
+
+                function formatSeconds(seconds) {
+                    var date = new Date(1970, 0, 1);
+                    date.setSeconds(seconds);
+                    return date.toTimeString().replace(/.*(\d{2}:\d{2}:\d{2}).*/, "$1");
+                }
+            }
+        }
+    </script>
+<script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            const episode = '294071';
+            let playing = document.querySelector(`[data-id="${episode}"]`);
+            if (playing) {
+                playing.click();
+                return;
+            }
+
+            const servers = document.getElementsByClassName('streaming-server');
+            if (servers[0]) {
+                servers[0].click();
+            }
+        });
+    </script>
+<script type="text/javascript">
+        $("#btn_report").click(() => {
+            fetch("https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/tap-1-294071/report", {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute(
+                        'content')
+                },
+                body: JSON.stringify({
+                    message: ''
+                })
+            });
+            $("#btn_report").remove();
+        })
+    </script>
+<script type="text/javascript">
+        var rated = false;
+        $('#star').raty({
+            score: 10.0,
+            number: 10,
+            numberMax: 10,
+            hints: ['quá tệ', 'tệ', 'không hay', 'không hay lắm', 'bình thường', 'xem được', 'có vẻ hay', 'hay',
+                'rất hay', 'siêu phẩm'
+            ],
+            starOff: '/assetClient/images/star-off-20.png',
+            starOn: '/assetClient/images/star-on-20.png',
+            starHalf: '/assetClient/images/star-half-20.png',
+            click: function(score, evt) {
+                if (rated) return
+                fetch("https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/rate", {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                        'X-CSRF-TOKEN': document.querySelector(
+                                'meta[name="csrf-token"]')
+                            .getAttribute(
+                                'content')
+                    },
+                    body: JSON.stringify({
+                        rating: score
+                    })
+                }).then((response) => response.json()).then((data) => {
+                    $('#rate_count').html(data.rating_count);
+                    $('#average').html(data.rating_star);
+                    rated = true;
+                    $('#star').data('raty').readOnly(true);
+                });
+            }
+        });
+    </script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=1375402186297759&autoLogAppEvents=1" nonce="351xvwfl" type="text/javascript"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('.aside_star').raty({
+                readOnly: true,
+                numberMax: 5,
+                half: true,
+                starOff: '/assetClient/images/star-off-20.png',
+                starOn: '/assetClient/images/star-on-20.png',
+                starHalf: '/assetClient/images/star-half-20.png',
+                score: function() {
+                    return $(this).attr('data-rating');
+                },
+                space: false
+            });
+        });
+
+        var $menu = $("#main-menu");
+        var $over_lay = $('#overlay_menu');
+        var hw = $(window).height();
+
+        function set_height_menu() {
+            var w_scroll_top = $(window).scrollTop();
+            if (w_scroll_top >= 50) {
+                pos_top_menu = 0;
+            } else {
+                pos_top_menu = 50 - w_scroll_top;
+            }
+            $menu.css('top', pos_top_menu + 'px');
+            $("#overlay_menu").css('top', pos_top_menu + 'px');
+        }
+
+        function open_menu() {
+            $menu.height(hw);
+            $menu.addClass('expanded');
+            set_height_menu();
+            $("#overlay_menu").removeClass('hide');
+            $('body,html').addClass('overlow-hidden');
+            $(".btn-humber").addClass('active');
+
+        }
+
+        function close_menu() {
+            $menu.removeClass('expanded');
+            var w_scroll_top = $(window).scrollTop();
+            if (w_scroll_top >= 50) {
+                pos_top_menu = 0;
+            } else {
+                pos_top_menu = w_scroll_top;
+            }
+            set_height_menu();
+            $("#overlay_menu").addClass('hide');
+            $('body,html').removeClass('overlow-hidden');
+            $(".btn-humber").removeClass('active');
+        }
+
+        $(document).ready(function() {
+            //Xử lý khi ấn vào nút menu
+            $(".btn-humber").click(function() {
+                if ($menu.hasClass('expanded')) {
+                    close_menu();
+                } else {
+                    open_menu();
+                }
+            });
+
+
+            //Xu ly khi vuot tren man hinh
+            /*
+            $("#content").swipe({
+                swipeRight:function(event, direction, distance, duration, fingerCount){
+                    open_menu();
+                },
+                threshold:20,
+                fingers:'all',
+            });
+            $("#overlay_menu").swipe({
+                swipeLeft:function(event, direction, distance, duration, fingerCount){
+                    close_menu();
+                },
+                threshold:10,
+                fingers:'all',
+            });
+            */
+
+            $(window).scroll(function() {
+                set_height_menu();
+            });
+
+            $(".parent-menu").click(function() {
+                $this = $(this);
+                $arrow = $this.find('.fa-expand');
+                if ($arrow.hasClass('fa-angle-down')) {
+                    $arrow.removeClass('fa-angle-down').addClass('fa-angle-up');
+                } else {
+                    $arrow.addClass('fa-angle-down').removeClass('fa-angle-up');
+                }
+                $this.find('.sub-menu').toggle();
+            });
+
+        });
+    </script>
+</body>
+</html>

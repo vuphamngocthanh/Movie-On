@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HEADER</title>
+</head>
+<header th:fragment="header" class="app-header bg-light border-0 navbar">
+  <button class="navbar-toggler sidebar-toggler d-lg-none mr-auto ml-3" type="button" data-toggle="sidebar-show" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="https://phimmoichilli.com" title="Backpack Admin Panel">
+    <b>MOVIE</b>on
+  </a>
+  <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button" data-toggle="sidebar-lg-show" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <ul class="nav navbar-nav d-md-down-none">
+  </ul>
+  <ul class="nav navbar-nav ml-auto ">
+    <li class="nav-item dropdown"><a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="position: relative;width: 35px;height: 35px;margin: 0 10px;"><i class="la la-gears" style="font-size: 2.3rem"></i></a>
+      <div class="dropdown-menu dropdown-menu-right mr-4 pb-1 pt-1">
+        <a class="dropdown-item" href="https://phimmoichilli.com/admin/quick-action/delete-cache">
+          Delete All Cache
+        </a>
+        <div class="dropdown-divider"></div>
+      </div>
+    </li>
+    <li class="nav-item dropdown pr-4">
+      <a class="nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="position: relative;width: 35px;height: 35px;margin: 0 10px;">
+        <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="|49"></script><img class="img-avatar" src="https://www.gravatar.com/avatar/64e1b8d34f425d19e1ee2ea7236d3028.jpg?s=80&amp;d=blank&amp;r=g" alt="admin" onerror="this.style.display='none'" style="margin: 0;position: absolute;left: 0;z-index: 1;">
+        <span class="backpack-avatar-menu-container" style="position: absolute;left: 0;width: 100%;background-color: #00a65a;border-radius: 50%;color: #FFF;line-height: 35px;font-size: 85%;font-weight: 300;"></span>
+      </a>
+      <div class="dropdown-menu dropdown-menu-right mr-4 pb-1 pt-1">
+        <a class="dropdown-item" href="https://phimmoichilli.com/admin/edit-account-info"><i class="la la-user"></i> My Account</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="https://phimmoichilli.com/admin/logout"><i class="la la-lock"></i> Logout</a>
+      </div>
+    </li>
+  </ul>
+</header>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body th:fragment="sidebar">
+    <div  class="sidebar sidebar-pills bg-light">
+        <nav class="sidebar-nav overflow-hidden">
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="/admin-movie/dashboard"><i class="la la-home nav-icon"></i>
+                    Dashboard</a></li>
+                <li class="nav-title">Phim</li>
+                <li class='nav-item'>
+                    <a class='nav-link' href='/admin-movie/list-movie'><i class='nav-icon la la-play-circle'></i>
+                        Quản lý phim</a>
+                </li>
+                <li class="nav-item nav-dropdown"><a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-list"></i> Phân loại</a>
+                    <ul class="nav-dropdown-items">
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/catalog'><i class='nav-icon la la-pagelines'></i>
+                            Danh sách</a></li>
+                        <li class='nav-item'>
+                            <a class='nav-link' th:href="@{/admin-movie/category-list}">
+                                <i class='nav-icon la la-at'></i>Thể loại
+                            </a>
+                        </li>
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/tag'><i class='nav-icon la la-link'></i>
+                            Tags</a>
+                        </li>
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/region'><i class='nav-icon la la-globe'></i> Khu
+                            vực</a></li>
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/actor'><i class='nav-icon la la-gratipay'></i>
+                            Diễn viên</a></li>
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/director'><i class='nav-icon la la-odnoklassniki'></i> Đạo diễn</a></li>
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/studio'><i class='nav-icon la la-connectdevelop'></i> Studio</a></li>
+                    </ul>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' href='https://phimmoichilli.com/admin/episode'><i class='nav-icon la la-info-circle'></i>
+                        Phim lỗi</a>
+                </li>
+                <li class="nav-title">Tuỳ chỉnh</li>
+                <li class="nav-item nav-dropdown"><a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-paint-brush"></i> Giao diện</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item"><a class="nav-link" href="https://phimmoichilli.com/admin/theme"><i class="nav-icon la la-photo"></i>Chủ đề</a>
+                        </li>
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/menu'><i class='nav-icon la la-list'></i>
+                            Menu</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-dropdown"><a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-cog"></i> Cài đặt</a>
+                    <ul class="nav-dropdown-items">
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/setting/group/generals/edit'><i class='nav-icon la la-wrench'></i>
+                            <span>General</span></a></li>
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/setting/group/metas/edit'><i class='nav-icon la la-chevron-circle-up'></i>
+                            <span>SEO</span></a></li>
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/setting/group/jwplayer/edit'><i class='nav-icon la la-play'></i>
+                            <span>Jwplayer</span></a></li>
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/setting/group/others/edit'><i class='nav-icon la la-slack'></i>
+                            <span>Khác</span></a></li>
+                    </ul>
+                </li>
+                <li class='nav-item'>
+                    <a class='nav-link' href='https://phimmoichilli.com/admin/sitemap/create'><i class='nav-icon la la-map'></i>
+                        Sitemap</a>
+                </li>
+                <li class="nav-title">Mở rộng</li>
+                <li class="nav-item nav-dropdown"><a class="nav-link nav-dropdown-toggle" href="#">
+                    <i class="nav-icon la la-hand-grab-o"></i> Ophim Crawler</a>
+                    <ul class="nav-dropdown-items">
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/plugin/ophim-crawler'>
+                            <i class='nav-icon la la-hand-grab-o'></i>
+                            <span>Crawler</span></a></li>
+                        <li class='nav-item'><a class='nav-link' href='https://phimmoichilli.com/admin/plugin/ophim-crawler/options'>
+                            <i class='nav-icon la la-cog'></i>
+                            <span>Option</span></a></li>
+                    </ul>
+                </li>
+                <li class="nav-title">ADMINISTRATION</li>
+                <li class="nav-item nav-dropdown">
+                    <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon la la-users"></i>
+                        Authentication</a>
+                    <ul class="nav-dropdown-items">
+                        <li class="nav-item"><a class="nav-link" href="https://phimmoichilli.com/admin/user"><i class="nav-icon la la-user"></i>
+                            <span>Users</span></a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://phimmoichilli.com/admin/role"><i class="nav-icon la la-id-badge"></i> <span>Roles</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</body>
+</html>

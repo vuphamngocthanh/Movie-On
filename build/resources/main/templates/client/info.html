@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:fragment="head" th:object="${episode}">
+  <meta charSet="utf-8" />
+  <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+  <meta http-equiv="content-language" content="en" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revisit-after" content="1 days" />
+  <meta name="ROBOTS" content="index,follow" />
+  <meta name="googlebot" content="index,follow" />
+  <meta name="BingBOT" content="index,follow" />
+  <meta name="yahooBOT" content="index,follow" />
+  <meta name="slurp" content="index,follow" />
+  <meta name="msnbot" content="index,follow" />
+  <meta name="csrf-token" content="evbDzMDb0bZJeIlV3nN9ofkXLTkKkw8dzMzGcdaI">
+  <meta property="fb:app_id" content="" />
+  <link rel="shortcut icon" href="/storage/files/icon/favicon.png" type="image/png" />
+  <title>phimmoi|phimmoichilli|Phim mới của phimmoichill|motphim|tvhayvn</title>
+  <meta name="description"
+        content="phimmoi là web cập nhật phim mới  . Với tiêu chí của phimmoichill, motphim,motchill và tvhayvn 2023.Phimmoichilli là trang phim tổng hợp top các bộ phim mới hấp dẫn nhất 2023, đủ các thể loại phim mới nhất hay nhất">
+  <meta name="keywords"
+        content="phim moi nét, phimmoi trọn bộ ,phim motchill, motchill phim mới , phim mới , phim moi net,phim mới chill, phimmoichill, Top phim">
+  <link rel="canonical" href="https://phimmoichilli.com" />
+  <meta property="og:title" content="phimmoi|phimmoichilli|Phim mới của phimmoichill|motphim|tvhayvn" />
+  <meta property="og:description"
+        content="phimmoi là web cập nhật phim mới  . Với tiêu chí của phimmoichill, motphim,motchill và tvhayvn 2023.Phimmoichilli là trang phim tổng hợp top các bộ phim mới hấp dẫn nhất 2023, đủ các thể loại phim mới nhất hay nhất" />
+  <meta property="og:url" content="current" />
+  <meta property="og:site_name" content="Phimmoichilli.com" />
+  <meta property="og:image" content="/storage/files/icon/motchilly.png" />
+  <meta name="twitter:site" content="Phimmoichilli.com" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" type="text/javascript"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js" type="text/javascript"></script>
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/bootstrap.minmod.css" />
+  <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css?v=16661691001.1" />
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/updet.css" />
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/responsivemod.css" />
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/owl.carouselmod.css" />
+  <link rel="stylesheet" type="text/css" href="/assetClient/css/magnific-popup.css">
+</head>
+<body>
+<div id="header" class="mobile-header" th:object="${episode}">
+  <div class="btn-humber">
+    <i class="fa fa-bars"></i>
+  </div>
+  <a class="logo" href="/" th:title="${episode.getMovies().getName()}">
+    <img src="/storage/files/icon/logo.png" alt="phimmoi">
+  </a>
+  <i class="fa fa-search btn-search" onclick="if (!window.__cfRLUnblockHandlers) return false; $('.mobile-search-bar').removeClass('hide');$('#keyword').focus();" data-cf-modified-=""></i>
+  <div class="mobile-search-bar hide">
+    <form method="GET" action="/" id="form_search">
+      <input id="keyword" type="text" name="search" placeholder="Tìm kiếm phim..." value="">
+    </form>
+    <i class="fa fa-search mobile-search-submit" onclick="if (!window.__cfRLUnblockHandlers) return false; $('#form_search_mobile').submit()" data-cf-modified-=""></i>
+    <i class="fa fa-times close-button" onclick="if (!window.__cfRLUnblockHandlers) return false; $('.mobile-search-bar').addClass('hide')" data-cf-modified-=""></i>
+  </div>
+</div>
+<div id="main-menu" class="mobile-main-menu" style="height: 667px; top: 50px;">
+  <div class="container">
+    <ul>
+      <li>
+        <a href="/" title="Trang chủ"><i class="fa fa-film"></i><span>Trang chủ</span>
+        </a>
+      </li>
+      <li>
+        <a href="/danh-sach/phim-moi" title="PHIM Mới"><i class="fa fa-film"></i><span>PHIM Mới</span>
+        </a>
+      </li>
+      <li>
+        <a href="/danh-sach/phim-bo" title="Phim Bộ"><i class="fa fa-film"></i><span>Phim Bộ</span>
+        </a>
+      </li>
+      <li>
+        <a href="/danh-sach/phim-le" title="PHIM LẺ"><i class="fa fa-film"></i><span>PHIM LẺ</span>
+        </a>
+      </li>
+      <li>
+        <a href="/danh-sach/phim-chieu-rap" title="Phim Rạp"><i class="fa fa-film"></i><span>Phim Rạp</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Thể loại"><i class="fa fa-film"></i><span>Thể loại</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Quốc gia"><i class="fa fa-film"></i><span>Quốc gia</span>
+        </a>
+      </li>
+      <li>
+        <a href="/the-loai/phim-18" title="Phê 18+"><i class="fa fa-film"></i><span>Phê 18+</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="header" class="only-pc">
+  <div class="container">
+    <a class="logo" href="/" title="Phim Cậu Út Nhà Tài Phiệt phimmoi|phimchill">
+      <img src="/storage/files/icon/logo.png" alt="phimmoi">
+    </a>
+    <div class="search-container relative">
+      <form method="GET" action="/" class="form-search">
+        <input id="keyword" type="text" name="search" placeholder="Tìm kiếm phim..." value="" />
+        <i class="fa fa-search" onclick="if (!window.__cfRLUnblockHandlers) return false; $(this).parent().submit()" style="cursor:pointer" data-cf-modified-=""></i>
+      </form>
+    </div>
+  </div>
+</div>
+<div id="main-menu" class="desktop">
+  <div class="container">
+    <ul>
+      <li class="menu-home">
+        <a href="/" title="Trang chủ">
+          <i class="fa fa-home"></i>
+        </a>
+      </li>
+      <li>
+        <a href="/" title="Trang chủ">
+          <i class="fa fa-film"></i><span>Trang chủ</span>
+        </a>
+      </li>
+      <li>
+        <a href="/danh-sach/phim-moi" title="PHIM Mới">
+          <i class="fa fa-film"></i><span>PHIM Mới</span>
+        </a>
+      </li>
+      <li>
+        <a href="/danh-sach/phim-bo" title="Phim Bộ">
+          <i class="fa fa-film"></i><span>Phim Bộ</span>
+        </a>
+      </li>
+      <li>
+        <a href="/danh-sach/phim-le" title="PHIM LẺ">
+          <i class="fa fa-film"></i><span>PHIM LẺ</span>
+        </a>
+      </li>
+      <li>
+        <a href="/danh-sach/phim-chieu-rap" title="Phim Rạp">
+          <i class="fa fa-film"></i><span>Phim Rạp</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Thể loại">
+          <i class="fa fa-film"></i><span>Thể loại</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" title="Quốc gia">
+          <i class="fa fa-film"></i><span>Quốc gia</span>
+        </a>
+      </li>
+      <li>
+        <a href="/the-loai/phim-18" title="Phê 18+">
+          <i class="fa fa-film"></i><span>Phê 18+</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+<div id="main-content">
+  <div id="content">
+    <div class="container ">
+      <div class="container " id="wrapper">
+        <div class="left-content" style="padding-left: 10px;padding-right: 10px;">
+          <div class="film-info" th:object="${episode}">
+            <div class="poster">
+              <a th:href="${episode.link}">
+                <img alt="Cậu Út Nhà Tài Phiệt" th:src="${episode.getMovies().thumbUrl}" />
+              </a>
+              <ul class="buttons">
+                <li>
+                  <a class="popup-youtube btn btn-trailer btn-success" href="https://www.youtube.com/watch?v=lq3pyNdP67k">
+                    <i class="fa fa-forward"></i> Trailer
+                  </a>
+                </li>
+                <li>
+                  <a class="btn-see btn btn-danger" th:href="@{/{name}-{slug}-{id}
+                  (name=${episode.getMovies().movie_slug},slug=${episode.slug},id=${episode.getMovies().id})}">
+                    <i class="fa fa-play-circle-o"></i> Xem Phim
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <h1 class="name" style="font-weight: 700; padding: 5px 0 0;white-space: nowrap;text-overflow: ellipsis;
+            overflow: hidden;margin: 0 0 5px;font-family: Tahoma;line-height: 1.6em; text-transform: uppercase;
+            font: 20px utmcafetaregular; color: #ff9601;display: block;" th:text="${episode.getMovies().getName()}"></h1>
+            <h2 class="real-name" style="font-family: inherit;font-weight: 300;line-height: 1.1;
+            color: #ccc;white-space: nowrap;text-overflow: ellipsis;overflow: hidden;" th:text="${episode.getMovies().getOriginName()}"></h2>
+            <div class="p-2">
+              <div class="tags-info" style="border-bottom: 1px solid rgba(255,255,255,.1);border-top: 1px solid rgba(255,255,255,.1);">
+                <span class="dd1"><i class="imdb-icon"></i> N/A</span>
+                <span class="tags-item-info" style="color: #fff;">
+<a href="https://phimmoichilli.com/quoc-gia/han-quoc" title="Hàn Quốc">Hàn Quốc</a>
+</span>
+                <span class="tags-item-info" style="color: #fff;">
+2022
+</span>
+                <span class="tags-item-info">16 Tập</span>
+              </div>
+              <ul class="meta-data" style="color: #BBB;">
+                <label><i class="fa fa-check"></i> Trạng thái :</label>
+                <strong style="color: #fff;font-size: 11px;padding: 2px 4px 2px;color: #fff;margin-left: 3px;font-weight: 500;color: #febb00;border: 1px solid #febb00; border-radius: 5px;white-space: nowrap;">
+                  <i class="fa fa-play-circle" aria-hidden="true"></i>
+                  Hoàn Tất (16/16)
+                </strong>
+                </li>
+                <li>
+                  <label><i class="fa fa-check"></i> Chất Lượng :</label>
+                  <strong>HD Vietsub</strong>
+                </li>
+                <li>
+                  <label><i class="fa fa-user" aria-hidden="true"></i> Đạo diễn :</label>
+                  <a href="https://phimmoichilli.com/dao-dien/jeong-dae-yun" tite="Đạo diễn Jeong Dae Yun">Jeong Dae Yun</a>
+                </li>
+                <li>
+                  <label><i class="fa fa-user" aria-hidden="true"></i> Diễn viên :</label>
+                  <a href="https://phimmoichilli.com/dien-vien/shin-hyun-bin-167059861782569" tite="Diễn viên Shin Hyun-bin">Shin Hyun-bin</a>, <a href="https://phimmoichilli.com/dien-vien/lee-sung-min" tite="Diễn viên Lee Sung Min">Lee Sung Min</a>, <a href="https://phimmoichilli.com/dien-vien/song-joong-ki" tite="Diễn viên Song Joong Ki">Song Joong Ki</a>
+                </li>
+                <li>
+                  <label><i class="app-menu__icon fa fa-archive"></i> Thể loại : </label>
+                  <a href="https://phimmoichilli.com/the-loai/tam-ly" tite="Đạo diễn Tâm Lý">Tâm Lý</a>
+                </li>
+                <li>
+                  <label><i class="fa fa-clock-o" aria-hidden="true"></i> Thời lượng :</label>
+                  <span>60 phút/tập</span>
+                </li>
+                <li>
+                  <label><i class="fa fa-eye" aria-hidden="true"></i> Lượt xem :</label>
+                  <span th:text="${episode.getMovies().getView}"></span>
+                </li>
+                <li>
+                  <div class="sbox">
+                    <div class="dt_social_single"><a data-id="16144" rel="nofollow" href="javascript: void(0);" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open(&quot;https://facebook.com/sharer.php?u=https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet&quot;,&quot;facebook&quot;,&quot;toolbar=0, status=0, width=650, height=450&quot;)" class="facebook dt_social" style="color: #fbfbfb;" data-cf-modified-=""><b>Facebook</b></a><a data-id="16144" rel="nofollow" href="javascript: void(0);" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open(&quot;https://twitter.com/intent/tweet?text=Cậu Út Nhà Tài Phiệt&amp;url=https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet&quot;,&quot;twitter&quot;,&quot;toolbar=0, status=0, width=650, height=450&quot;)" data-rurl="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet" class="twitter dt_social" style="color: #fbfbfb;" data-cf-modified-=""><b>Twitter</b></a><a data-id="16144" rel="nofollow" href="javascript: void(0);" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open(&quot;https://pinterest.com/pin/create/button/?url=https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet&amp;media=/storage/images/cau-ut-nha-tai-phiet/cau-ut-nha-tai-phiet-thumb.jpg&amp;description=Cậu Út Nhà Tài Phiệt&quot;,&quot;pinterest&quot;,&quot;toolbar=0, status=0, width=650, height=450&quot;)" class="pinterest dt_social" style="color: #fbfbfb;" data-cf-modified-=""><b>Pinterest</b></a><a data-id="16144" rel="nofollow" href="javascript: void(0);" onclick="if (!window.__cfRLUnblockHandlers) return false; window.open(&quot;https://telegram.me/share/url?url=https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet&amp;media=/storage/images/cau-ut-nha-tai-phiet/cau-ut-nha-tai-phiet-thumb.jpg&amp;description=Cậu Út Nhà Tài Phiệt&quot;,&quot;telegram&quot;,&quot;toolbar=0, status=0, width=650, height=450&quot;)" class="telagram dt_social" style="color: #fbfbfb;" data-cf-modified-=""><b>Telegram</b></a></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="box-rating">
+                    <div class="rate-title">
+                      <span class="rate-lable"></span>
+                    </div>
+                    <div id="star" data-score="10.0" style="cursor: pointer;">
+                    </div>
+                    <div>
+                      <div id="div_average" style="float: left; line-height: 16px; margin: 0 5px;margin-top: 5px; ">
+<span class="average" id="average" itemprop="ratingValue">
+10.0
+</span>
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                        <span id="rate_count" itemprop="reviewCount">1</span> lượt đánh giá
+                      </div>
+                      <span id="hint"></span>
+                      <meta itemprop="bestRating" content="10" />
+                      <meta itemprop="worstRating" content="1" />
+                      <meta itemprop="ratingValue" content="10.0" />
+                      <meta itemprop="ratingCount" content="1" />
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="clear"></div>
+          </div>
+          <div class="block-film" id="film-trailer">
+            <p class="caption"> <i class="app-menu__icon  fa fa-pencil-square-o" aria-hidden="true"></i> Nội dung phim
+            </p>
+            <div class="film-content" style="padding: 5px 8px;margin: 0px 0 5px 0;font-size: 14px;color: #BBB;" th:text="${episode.getMovies().getContent()}">
+              <p><img alt="" src="/storage/images/cau-ut-nha-tai-phiet/cau-ut-nha-tai-phiet-poster.jpg" /></p>
+            </div>
+          </div>
+          <div class="block-film" id="film-trailer">
+            <p class="caption"><i class="fa fa-facebook-square" aria-hidden="true"></i>Bình Luận Facebook</p>
+            <div class="box-comment" id="tabs-facebook" style="background: linear-gradient(to right, #ffff, #ffff);">
+              <div class="fb-comments" data-href="https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet" data-width="670" data-numposts="10" data-order-by="reverse_time" data-colorscheme="light">
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="tags" style="margin-top: 10px;}">
+            <label>
+              <i class="fa fa-tags"></i> Từ khóa <i class="fa fa-caret-right"></i>
+            </label>
+            <li class="tag-item">
+              <h2>
+                <a href="https://phimmoichilli.com/tu-khoa/cau-ut-nha-tai-phiet" rel="follow, index" title="Cậu Út Nhà Tài Phiệt">Cậu Út Nhà Tài Phiệt
+                </a>
+              </h2>
+            </li>
+            <li class="tag-item">
+              <h2>
+                <a href="https://phimmoichilli.com/tu-khoa/reborn-rich" rel="follow, index" title="Reborn Rich">Reborn Rich
+                </a>
+              </h2>
+            </li>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div th:replace="/client/layout :: sidebar-right"><div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="footer" style="margin-top: 25px;">
+  <div class="container">
+    <div class="content">
+      <div class="views-row views-row-1" style="width: 100%;text-align: center;">
+        <div class="logo-footer">
+          <a href=""><img alt="phimmoi" style="width: 146px;" src="/storage/files/icon/logo.png" /></a>
+        </div>
+        <div class="copy-right">
+          <p>Copyright ® 2021 OPHIMCMS All Rights Reserved.</p>
+          <p><a href="/sitemap.xml">Sitemap</a> | <a href="">Liên hệ</a> | <a href="/danh-sach/phim-moi.html">Phim Mới </a> | <a href="" target="_blank" title="">Phim Hay </a></p><br>
+        </div>
+        <div class="hidden-sm hidden-xs">
+          <ul class="tags" style="list-style: none;">
+            <li class="tag-item"><a href="/tu-khoa/phim-moi" rel="nofollow" title="phimmoi">phimmoi</a></li>
+            <li class="tag-item"><a href="/tag/spider-man.html" rel="nofollow" title="/tu-khoa/phimmoichill">phimmoichill</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phimchill" rel="nofollow" title="phimchill">phimchill</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phim-moi-167120280796461" rel="nofollow" title="phim mới">phim mới</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phim-hay" rel="nofollow" title="phim hay">phim hay</a></li>
+            <li class="tag-item"><a href="/tu-khoa/top-phim" rel="nofollow" title="Top phim">Top phim</a></li>
+            <li class="tag-item"><a href="/tu-khoa/phim-hay-nhat-2023" rel="nofollow" title="phim hay nhất 2023">phim hay nhất 2023</a></li>
+            <li class="tag-item"><a href="/tag/friday-the-13th.html" rel="nofollow" title="Friday The 13th">Friday The 13th</a></li>
+            <li class="tag-item"><a href="/tag/paranormal-activity.html" rel="nofollow" title="Paranormal Activity">Paranormal Activity</a></li>
+            <li class="tag-item"><a href="/tag/luoi-cua.html" rel="nofollow" title="Lưỡi Cưa">Lưỡi Cưa</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="ads-preload"></div>
+<script type="text/javascript" src="/assetClient/js/jquery.min.js"></script>
+<script type="text/javascript" src="/assetClient/js/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="/assetClient/js/functions.js"></script>
+<script type="text/javascript" src="/assetClient/js/actions.js"></script>
+<script type="text/javascript" src="/assetClient/plugins/jquery-raty/jquery.raty.js"></script>
+<script type="text/javascript" src="/assetClient/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/assetClient/js/popup.youtube.js"></script>
+<script type="text/javascript">
+        var rated = false;
+        $('#star').raty({
+            score: 10.0,
+            number: 10,
+            numberMax: 10,
+            hints: ['quá tệ', 'tệ', 'không hay', 'không hay lắm', 'bình thường', 'xem được', 'có vẻ hay', 'hay',
+                'rất hay', 'siêu phẩm'
+            ],
+            starOff: '/assetClient/images/star-off-20.png',
+            starOn: '/assetClient/images/star-on-20.png',
+            starHalf: '/assetClient/images/star-half-20.png',
+            click: function(score, evt) {
+                if (rated) return
+                fetch("https://phimmoichilli.com/phim/cau-ut-nha-tai-phiet/rate", {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                        'X-CSRF-TOKEN': document.querySelector(
+                                'meta[name="csrf-token"]')
+                            .getAttribute(
+                                'content')
+                    },
+                    body: JSON.stringify({
+                        rating: score
+                    })
+                }).then((response) => response.json()).then((data) => {
+                    $('#rate_count').html(data.rating_count);
+                    $('#average').html(data.rating_star);
+                    rated = true;
+                    $('#star').data('raty').readOnly(true);
+                });
+            }
+        });
+    </script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=1375402186297759&autoLogAppEvents=1" nonce="351xvwfl" type="text/javascript"></script>
+<script type="text/javascript">
+        $(document).ready(function() {
+            $('.aside_star').raty({
+                readOnly: true,
+                numberMax: 5,
+                half: true,
+                starOff: '/assetClient/images/star-off-20.png',
+                starOn: '/assetClient/images/star-on-20.png',
+                starHalf: '/assetClient/images/star-half-20.png',
+                score: function() {
+                    return $(this).attr('data-rating');
+                },
+                space: false
+            });
+        });
+
+        var $menu = $("#main-menu");
+        var $over_lay = $('#overlay_menu');
+        var hw = $(window).height();
+
+        function set_height_menu() {
+            var w_scroll_top = $(window).scrollTop();
+            if (w_scroll_top >= 50) {
+                pos_top_menu = 0;
+            } else {
+                pos_top_menu = 50 - w_scroll_top;
+            }
+            $menu.css('top', pos_top_menu + 'px');
+            $("#overlay_menu").css('top', pos_top_menu + 'px');
+        }
+
+        function open_menu() {
+            $menu.height(hw);
+            $menu.addClass('expanded');
+            set_height_menu();
+            $("#overlay_menu").removeClass('hide');
+            $('body,html').addClass('overlow-hidden');
+            $(".btn-humber").addClass('active');
+
+        }
+
+        function close_menu() {
+            $menu.removeClass('expanded');
+            var w_scroll_top = $(window).scrollTop();
+            if (w_scroll_top >= 50) {
+                pos_top_menu = 0;
+            } else {
+                pos_top_menu = w_scroll_top;
+            }
+            set_height_menu();
+            $("#overlay_menu").addClass('hide');
+            $('body,html').removeClass('overlow-hidden');
+            $(".btn-humber").removeClass('active');
+        }
+
+        $(document).ready(function() {
+            //Xử lý khi ấn vào nút menu
+            $(".btn-humber").click(function() {
+                if ($menu.hasClass('expanded')) {
+                    close_menu();
+                } else {
+                    open_menu();
+                }
+            });
+
+
+            //Xu ly khi vuot tren man hinh
+            /*
+            $("#content").swipe({
+                swipeRight:function(event, direction, distance, duration, fingerCount){
+                    open_menu();
+                },
+                threshold:20,
+                fingers:'all',
+            });
+            $("#overlay_menu").swipe({
+                swipeLeft:function(event, direction, distance, duration, fingerCount){
+                    close_menu();
+                },
+                threshold:10,
+                fingers:'all',
+            });
+            */
+
+            $(window).scroll(function() {
+                set_height_menu();
+            });
+
+            $(".parent-menu").click(function() {
+                $this = $(this);
+                $arrow = $this.find('.fa-expand');
+                if ($arrow.hasClass('fa-angle-down')) {
+                    $arrow.removeClass('fa-angle-down').addClass('fa-angle-up');
+                } else {
+                    $arrow.addClass('fa-angle-down').removeClass('fa-angle-up');
+                }
+                $this.find('.sub-menu').toggle();
+            });
+
+        });
+    </script>
+</body>
+</html>

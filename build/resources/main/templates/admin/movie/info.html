@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" lang="en" dir="ltr">
+<head th:replace="~{admin/common/head :: head}"></head>
+<body class="app aside-menu-fixed sidebar-lg-show">
+<div th:replace="~{admin/common/header :: header}"></div>
+<div class="app-body">
+  <div th:include="~{admin/common/sidebar :: sidebar}"></div>
+  <main class="main pt-2">
+    <nav aria-label="breadcrumb" class="d-none d-lg-block">
+      <ol class="breadcrumb bg-transparent p-0 justify-content-end">
+        <li class="breadcrumb-item text-capitalize">
+          <a href="https://phimmoichilli.com/admin/dashboard">Admin</a>
+        </li>
+        <li class="breadcrumb-item text-capitalize">
+          <a href="https://phimmoichilli.com/admin/movie">movies</a>
+        </li>
+        <li class="breadcrumb-item text-capitalize active" aria-current="page">
+          Preview
+        </li>
+      </ol>
+    </nav>
+    <section class="container-fluid d-print-none">
+      <a href="javascript: window.print();" class="btn float-right">
+        <i class="la la-print"></i>
+      </a>
+      <h2>
+        <span class="text-capitalize">movies</span>
+        <small>Preview movie.</small>
+        <small class="">
+          <a href="https://phimmoichilli.com/admin/movie" class="font-sm">
+            <i class="la la-angle-double-left"></i> Back to all<span>movies</span>
+          </a>
+        </small>
+      </h2>
+    </section>
+    <div class="container-fluid animated fadeIn">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="">
+            <div class="card no-padding no-border">
+              <table th:object="${movie}" class="table table-striped mb-0">
+                <tbody>
+                <tr>
+                  <td>
+                    <strong>Name:</strong>
+                  </td>
+                  <td>
+                    <span th:text="${movie}"></span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Origin name:</strong>
+                  </td>
+                  <td>
+                    <span> Begin Again </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Slug:</strong>
+                  </td>
+                  <td>
+                    <span> bat-dau-lai </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Content:</strong>
+                  </td>
+                  <td>
+                    <span> - </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Thumb url:</strong>
+                  </td>
+                  <td>
+                    <span>
+                      /storage/images/bat-au-lai/bat-au-lai-thumb.jpg
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Poster url:</strong>
+                  </td>
+                  <td>
+                    <span> - </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Type:</strong>
+                  </td>
+                  <td>
+                    <span> single </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Status:</strong>
+                  </td>
+                  <td>
+                    <span> completed </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Trailer url:</strong>
+                  </td>
+                  <td>
+                    <span> - </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Episode time:</strong>
+                  </td>
+                  <td>
+                    <span> 1H10M59S </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Episode current:</strong>
+                  </td>
+                  <td>
+                    <span> Full </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Episode total:</strong>
+                  </td>
+                  <td>
+                    <span> 1 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Quality:</strong>
+                  </td>
+                  <td>
+                    <span> HD </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Language:</strong>
+                  </td>
+                  <td>
+                    <span> Vietsub </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Notify:</strong>
+                  </td>
+                  <td>
+                    <span> - </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Showtimes:</strong>
+                  </td>
+                  <td>
+                    <span> - </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Publish year:</strong>
+                  </td>
+                  <td>
+                    <span> 2,020 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Is shown in theater:</strong>
+                  </td>
+                  <td>
+                    <span data-order="0"> No </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Is recommended:</strong>
+                  </td>
+                  <td>
+                    <span data-order="0"> No </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Is copyright:</strong>
+                  </td>
+                  <td>
+                    <span data-order="0"> No </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Is sensitive content:</strong>
+                  </td>
+                  <td>
+                    <span data-order="0"> No </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Episode server count:</strong>
+                  </td>
+                  <td>
+                    <span> 0 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Episode data count:</strong>
+                  </td>
+                  <td>
+                    <span> 0 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>View total:</strong>
+                  </td>
+                  <td>
+                    <span> 6 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>View day:</strong>
+                  </td>
+                  <td>
+                    <span> 0 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>View week:</strong>
+                  </td>
+                  <td>
+                    <span> 3 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>View month:</strong>
+                  </td>
+                  <td>
+                    <span> 6 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Rating count:</strong>
+                  </td>
+                  <td>
+                    <span> 0 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Rating star:</strong>
+                  </td>
+                  <td>
+                    <span> 0.0 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Update handler:</strong>
+                  </td>
+                  <td>
+                    <span> Ophim\Crawler\OphimCrawler\Crawler </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Update identity:</strong>
+                  </td>
+                  <td>
+                    <span> 621cb7b03fb21848d19731bc </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Update checksum:</strong>
+                  </td>
+                  <td>
+                    <span> 14a35d1bbf9562a44ac9705d172c008a </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>User:</strong>
+                  </td>
+                  <td>
+                    <span> 1 </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>User name:</strong>
+                  </td>
+                  <td>
+                    <span> admin </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Created:</strong>
+                  </td>
+                  <td>
+                    <span data-order="2022-12-06 14:13:03">
+                      6 Dec 2022, 14:13
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Updated:</strong>
+                  </td>
+                  <td>
+                    <span data-order="2022-12-06 14:13:03">
+                      6 Dec 2022, 14:13
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Actions</strong></td>
+                  <td>
+                    <a
+                            href="https://phimmoichilli.com/admin/movie/659/edit"
+                            class="btn btn-sm btn-link"
+                    ><i class="la la-edit"></i> Edit</a
+                    >
+                    <a
+                            href="javascript:void(0)"
+                            onclick="if (!window.__cfRLUnblockHandlers) return false; deleteEntry(this)"
+                            data-route="https://phimmoichilli.com/admin/movie/659"
+                            class="btn btn-sm btn-link"
+                            data-button-type="delete"
+                    ><i class="la la-trash"></i> Delete</a
+                    >
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<div th:replace="~{admin/common/footer :: footer}"></div>
+<script type="text/javascript" src="https://phimmoichilli.com/packages/backpack/base/js/bundle.js?v=1.0.0@dae217b370cabdec958dab215801096cdacf37fe"></script>
+<script type="text/javascript" src="https://phimmoichilli.com/packages/select2/dist/js/select2.full.min.js?v=1.0.0@dae217b370cabdec958dab215801096cdacf37fe"></script>
+</body>
+</html>
